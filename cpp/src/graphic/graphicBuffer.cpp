@@ -41,8 +41,6 @@ void GraphicBuffer::updateBuffers(vector<GLfloat>& vertices, vector<GLuint>& ind
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     }
-
-
 }
 
 void GraphicBuffer::bindVAO() {

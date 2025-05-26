@@ -5,12 +5,12 @@ CC = gcc
 # Compiler flags
 CXXFLAGS = -Wall -Wextra -pedantic -std=c++11 -I./include -DGLM_ENABLE_EXPERIMENTAL
 CFLAGS = -Wall -Wextra -pedantic -std=c11 -I./include
-LDFLAGS = -L./lib -static
+LDFLAGS = -L./lib -static -Wl,--subsystem,console
 LDLIBS = -lglfw3 -lopengl32 -lgdi32 -lkernel32 -luser32 -lshell32
 
 # Source files
-CPPSRCS = $(shell find src -name "*.cpp")
-CSRCS = $(shell find src -name "*.c")
+CPPSRCS = $(wildcard src/*.cpp) $(wildcard src/*/*.cpp) $(wildcard src/*/*/*.cpp)
+CSRCS = $(wildcard src/*.c) $(wildcard src/*/*.c) $(wildcard src/*/*/*.c)
 
 # Object files
 CPPOBJS = $(patsubst src/%.cpp,obj/%.o,$(CPPSRCS))

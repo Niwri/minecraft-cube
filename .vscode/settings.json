@@ -109,6 +109,7 @@
     "ctime": "cpp",
     "iomanip": "cpp",
     "chrono": "cpp",
-    "ratio": "cpp"
+    "ratio": "cpp",
+    "cube.h": "c"
   }
 }
